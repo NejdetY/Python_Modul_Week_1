@@ -1,41 +1,148 @@
-# Python_Modul_Week_1
+######week1_answer1######
+for i in range(1,11):
+    print(i)
 
-- Question 1: Write a Python code that prints numbers from 1 to 10 on the screen.
+#####week1_answer2######
+n=int(input("Bir sayi giriniz:"))
+print("Bu sayiya kadar olan cift sayilar:")
+for i in range(2, n+1, 2):
+ print(i)
 
-- Question 2: Take a number input from the user and write a Python program that prints even numbers up to this number on the screen. Do this first with 'for' and then with 'while' loops.
+ #####week1_answer2b######
+ n=int(input("Bir sayi giriniz:"))
+print("Bu sayiaya kadar ki cift sayilar:")
+i=2
+while i<n:
+    print(i)
+    i+=2
 
-- Question 3: Write a Python code that receives a start and end value from the user and prints all the numbers between these values ​​(including the end value) on the screen.
+#####week1_answer3######
+first=int(input("enter the first number:"))
+n=int(input("Bir sayi giriniz:"))
+print("Bu sayiaya kadar ki cift sayilar:")
+i=2
+while i<n:
+    print(i)
+    i+=2
+ #####week1_answer4######
+ x=int(input("Enter one number please:"))
 
-- Question 4: Get a number from the user and write a Python code that prints whether this number is odd or even.
+if x%2==0:
+    print("the number you entered even")
+else:
+    print("the number you entered odd")
 
-- Question 5: Write a Python program that takes a positive integer input from the user and calculates its factorial. Factorial is the product of all positive integers between a number itself and 1.
- For example: if the user entered 5, the program should give the following output:
- Enter a number from the user: 5
- Factorial: 120
+ #####week1_answer5######
+ n=int(input("Enter the number you want the factorial to be calculated:"))
+factorial=1
 
-- Question 6: Write a Python code that receives a number from the user and checks whether this number is prime.
+if n<0:
+    print("factorial is not defined for negative number.")
+elif n==0:
+    print("factorial=1")
+else:
+    for i in range(1,n+1):
+        factorial*=i
+    print("factorial=",factorial)
 
-- Question 7: How to create a loop that calculates the Fibonacci sequence and returns the result as a list containing numbers up to a certain limit?
+  #####week1_answer6######
+  def prime(number):
+    if number<=1:
+        return False
+    for i in range(2, int(number**0.5)+1):
+        if number%i==0:
+            return False
+        return true
+try:
+        num=int(input("Enter a number you want to check for prime:"))
+        if prime(num):
+            print(f"{num} is a prime number")
+        else:
+            print(f"{num} isn't a prime number")
+except ValueError:
+        Print("Please enter o valid integer.")
 
+ #####week1_answer7######
+def fibonacci(limit):
+    fib_dizisi=[0,1]
+    for x in range(2,limit):
+        next_fib=fib_dizisi[-1]+fib_dizisi[-2]
+        if next_fib>limit:
+            break
+        fib_dizisi.append(next_fib)
+    return fib_dizisi
 
-- Question 8: Write a Python code that takes a word from the user and prints the reverse of this word on the screen.
+limit=int(input("Fibonacci dizisi icin bir sinir giriniz:"))
+sonuc=fibonacci(limit)
+print(f"{limit} sinirina kadar fibonacci dizisi:{sonuc}")
 
-- Question 9: How to create a combination of loop and conditional statement that takes a word input from the user and checks whether that word is a palindrome (the same when read backwards)?
+ #####week1_answer8######
+ word=input("Enter the word you want to be written reverse:")
+reverse_word=word[::-1]
+print("The reverse of word:",reverse_word )
 
-- Question 10: Write the code that calculates the person's weight index and returns the result as underweight, overweight or overweight according to the index value. (You can look on the internet for the weight index calculation)
-To do this, ask the user for their weight and height measurements. weight index
-If it is below 25, it is weak,
-Between 25-30 is normal,
-If you are over 30-40, you are overweight.
-If you are over 40, you are overweight.
+ #####week1_answer9######
+word=input("Enter a word:")
 
-- Question 11: How to write a Python program that finds the largest of three numbers entered by a user?
+reverse_word=word[::-1]
+if reverse_word==word:
+    print("This word is polindrom" )
+else:
+    print("This word is not polindrom.")
 
-- Question 12: Get Midterm and Final grades from a student for any course. The sum of 40% of the midterm exam grade and 60% of the final grade will give the year-end average. If the average is below 50, "FAILED" will appear on the screen, and if it is 50 or above, "SUCCESSFUL" will be displayed on the screen. This printing process is 4 lessons. and the lessons will be written one after the other.
+#####week1_answer10######
+weight=int(input("Enter your weight:"))
+if weight<=50:
+    print("you are weak")
+elif weight>=90:
+    print("you are overweight")
+else:
+    print("your weight is normal")
 
-## Hackerrank assignments
-1.  https://www.hackerrank.com/challenges/python-arithmetic-operators/problem
-2.  https://www.hackerrank.com/challenges/find-second-maximum-number-in-a-list/problem
-3.  https://www.hackerrank.com/challenges/python-print/problem
-4.  https://www.hackerrank.com/challenges/finding-the-percentage/problem
+ #####week1_answer11######
+ num1=int(input("Enter first number:"))
+num2=int(input("Enter second number:"))
+num3=int(input("Enter third number:"))
+if num1>=num2 and num1>=num3:
+    print("the largest number", num1)
 
+elif num2>=num3:
+    print("the largest number", num2)
+else:
+    print("the largest number", num3)
+
+ #####week1_answer12######
+math1=int(input("Enter your math midterm grade:"))
+math2=int(input("Enter your math final grade:"))
+
+physics1=int(input("Enter your physics midterm grade:"))
+physics2=int(input("Enter your physics final grade:"))
+
+chemistry1=int(input("Enter your chemistry midterm grade:"))
+chemistry2=int(input("Enter your chemistry final grade:"))
+
+history1=int(input("Enter your history midterm grade:"))
+history2=int(input("Enter your history final grade:"))
+
+if (math1*0.4+math2*0.6)>=50:
+    print("you passed math class" )
+else:
+    print("you failed math class")
+
+if (physics1*0.4+physics2*0.6)>=50:
+    print("you passed physics class" )
+else:
+    print("you failed physics class")
+
+if (chemistry1*0.4+chemistry2*0.6)>=50:
+    print("you passed chemistry class" )
+else:
+    print("you failed chemistry class")
+
+if (history1*0.4+history2*0.6)>=50:
+    print("you passed history class" )
+else:
+    print("you failed history class")
+
+    
+ 
